@@ -47,10 +47,10 @@ $(addprefix printf/, $(SRC_PRINTF))
 
 SRO=$(SRC:.c=.o)
 
-$(NAME): $(SRO) include/libft.h
+$(NAME): $(SRO)
 	@$(COMPRESS) $(NAME) $(SRO)
 
-%.o: %.c
+%.o: %.c include/libft.h
 	@$(CC) $(FLAGS) $< -o $@
 
 all: $(NAME) $(SRC)
